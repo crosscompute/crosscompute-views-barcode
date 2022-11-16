@@ -14,12 +14,13 @@ pip install crosscompute-views-barcode
 
 # Update configuration
 vim automate.yml
-  input:
-    variables:
-      - id: x
-        view: barcode
   output:
     variables:
       - id: y
         view: barcode
+        path: variables.dictionary
+        configuration:
+          frames-per-second: 10
+          scanner-width-in-pixels: 256
+          scanner-height-in-pixels: 256
 ```
