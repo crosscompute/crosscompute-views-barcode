@@ -24,7 +24,7 @@ class BarcodeView(VariableView):
         c = b.get_variable_configuration(variable_definition)
         main_text = BARCODE_OUTPUT_HTML.substitute({
             'element_id': element_id,
-            'mode_name': self.mode_name,
+            'mode_name': x.mode_name,
             'view_name': self.view_name,
             'variable_id': variable_id,
         })
