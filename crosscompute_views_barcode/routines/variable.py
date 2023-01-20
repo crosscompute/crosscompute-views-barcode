@@ -26,8 +26,7 @@ class BarcodeView(VariableView):
             'element_id': element_id,
             'mode_name': x.mode_name,
             'view_name': self.view_name,
-            'variable_id': variable_id,
-        })
+            'variable_id': variable_id})
         js_texts = [
             BARCODE_OUTPUT_JS.substitute({
                 'element_id': element_id,
@@ -36,15 +35,10 @@ class BarcodeView(VariableView):
                 'scanner_width_in_pixels': c.get(
                     'scanner-width-in-pixels', SCANNER_WIDTH_IN_PIXELS),
                 'scanner_height_in_pixels': c.get(
-                    'scanner-height-in-pixels', SCANNER_HEIGHT_IN_PIXELS),
-            }),
-        ]
+                    'scanner-height-in-pixels', SCANNER_HEIGHT_IN_PIXELS)})]
         return {
-            'css_uris': [],
-            'js_uris': [BARCODE_JS_URI],
-            'main_text': main_text,
-            'js_texts': js_texts,
-        }
+            'css_uris': [], 'js_uris': [BARCODE_JS_URI],
+            'main_text': main_text, 'js_texts': js_texts}
 
 
 def load_view_text(file_name):
