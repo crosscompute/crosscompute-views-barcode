@@ -2,7 +2,7 @@ from pathlib import Path
 
 
 PACKAGE_FOLDER = Path(__file__).parent
-TEMPLATES_FOLDER = PACKAGE_FOLDER / 'templates'
+ASSETS_FOLDER = PACKAGE_FOLDER / 'assets'
 
 
 BARCODE_JS_URI = 'https://unpkg.com/html5-qrcode'

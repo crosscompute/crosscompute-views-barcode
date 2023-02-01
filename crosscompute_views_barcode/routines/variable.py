@@ -1,5 +1,3 @@
-from string import Template as StringTemplate
-
 from crosscompute.routines.interface import (
     Batch)
 from crosscompute.routines.variable import (
@@ -10,8 +8,8 @@ from ..constants import (
     BARCODE_JS_URI,
     FRAMES_PER_SECOND,
     SCANNER_HEIGHT_IN_PIXELS,
-    SCANNER_WIDTH_IN_PIXELS,
-    TEMPLATES_FOLDER)
+    SCANNER_WIDTH_IN_PIXELS)
+from .asset import asset_storage
 
 
 class BarcodeView(VariableView):
@@ -41,9 +39,5 @@ class BarcodeView(VariableView):
             'main_text': main_text, 'js_texts': js_texts}
 
 
-def load_view_text(file_name):
-    return open(TEMPLATES_FOLDER / file_name).read().strip()
-
-
-BARCODE_OUTPUT_HTML = StringTemplate(load_view_text('barcode.html'))
-BARCODE_OUTPUT_JS = StringTemplate(load_view_text('barcode.js'))
+BARCODE_OUTPUT_HTML = asset_storage.load_string_text('barcode.html')
+BARCODE_OUTPUT_JS = asset_storage.load_string_text('barcode.js')
