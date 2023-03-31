@@ -9,7 +9,9 @@ from ..constants import (
     FRAMES_PER_SECOND,
     SCANNER_HEIGHT_IN_PIXELS,
     SCANNER_WIDTH_IN_PIXELS)
-from .asset import asset_storage
+from .asset import (
+    BARCODE_OUTPUT_HTML,
+    BARCODE_OUTPUT_JS)
 
 
 class BarcodeView(VariableView):
@@ -35,9 +37,5 @@ class BarcodeView(VariableView):
                 'scanner_height_in_pixels': c.get(
                     'scanner-height-in-pixels', SCANNER_HEIGHT_IN_PIXELS)})]
         return {
-            'css_uris': [], 'js_uris': [BARCODE_JS_URI],
-            'main_text': main_text, 'js_texts': js_texts}
-
-
-BARCODE_OUTPUT_HTML = asset_storage.load_string_text('barcode.html')
-BARCODE_OUTPUT_JS = asset_storage.load_string_text('barcode.js')
+            'css_uris': [], 'css_texts': [], 'js_uris': [BARCODE_JS_URI],
+            'js_texts': js_texts, 'main_text': main_text}
