@@ -19,7 +19,7 @@ class BarcodeView(VariableView):
     def render_output(self, b: Batch, x: Element):
         variable_id = self.variable_id
         variable_definition = self.variable_definition
-        c = b.get_variable_configuration(variable_definition)
+        c = b.get_data_configuration(variable_definition)
         element_id = x.id
         main_text = BARCODE_OUTPUT_HTML.substitute({
             'element_id': element_id,
