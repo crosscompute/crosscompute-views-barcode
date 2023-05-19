@@ -17,10 +17,10 @@ from .asset import (
 class BarcodeView(VariableView):
 
     def render_output(self, b: Batch, x: Element):
-        element_id = x.id
         variable_id = self.variable_id
         variable_definition = self.variable_definition
         c = b.get_variable_configuration(variable_definition)
+        element_id = x.id
         main_text = BARCODE_OUTPUT_HTML.substitute({
             'element_id': element_id,
             'mode_name': x.mode_name,
