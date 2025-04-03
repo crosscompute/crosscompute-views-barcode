@@ -4,7 +4,7 @@ Scan barcodes in your CrossCompute automations. Here are the views included in t
 
 - barcode
 
-Please see https://github.com/crosscompute/crosscompute for more information about the CrossCompute Analytics Automation Framework.
+Please see https://github.com/crosscompute/crosscompute for more information about the CrossCompute Analytics Software Development Kit.
 
 ## Usage
 
